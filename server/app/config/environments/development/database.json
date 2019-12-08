@@ -1,0 +1,19 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "host": "600_db",
+        "port": "27017",
+        "database": "600_db",
+        "username": "",
+        "password": ""
+      },
+      "options": {
+        "ssl": false
+      }
+    }
+  }
+}
