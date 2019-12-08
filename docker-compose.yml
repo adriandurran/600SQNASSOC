@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  600_cms:
+    container_name: 600_cms
+    image: strapi/strapi
+    env_file:
+      - ./server/.env
+    ports:
+      - 1337:1337
+    volumes:
+      - ./server/app:/srv/app
+    depends_on:
+      - 600_db
+
+  600_db:
+    container_name: 600_db
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=600_db
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db/data:/data/db
+    restart: always
